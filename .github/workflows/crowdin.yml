@@ -1,0 +1,76 @@
+name: Crowdin Action
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+  push:
+    branches: [ main ]
+    paths:
+      - "Fabric/**"
+      - "Forge/**"
+  workflow_dispatch: {}
+
+concurrency: 
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  synchronize-with-crowdin:
+    runs-on: ubuntu-latest
+
+    outputs:
+      branch_status: ${{ steps.branch.outputs.EXISTED_STATUS }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: crowdin action
+        uses: Docker-Collection/docker-crowdin-action@main
+        with:
+          upload_sources: true
+          upload_translations: true
+          download_translations: true
+          localization_branch_name: crowdin_translations
+          create_pull_request: true
+          pull_request_title: "新的 Crowdin 翻譯"
+          pull_request_body: "透過 [Crowdin GH Action](https://github.com/crowdin/github-action) 的 Crowdin 翻譯"
+          pull_request_base_branch_name: "main"
+          commit_message: "trans(Crowdin): 新的翻譯上傳"
+          source: "*/*/*/lang/en_us.json"
+          translation: "/%original_path%/%locale_with_underscore%.%file_extension%"
+          project_id: ${{ secrets.CROWDIN_PROJECT_ID }}
+          token: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+          github_user_name: EfinaBot
+          github_user_email: 71629264+EfinaBot@users.noreply.github.com
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_EFINABOT }}
+
+      # - name: Branch checker
+      #   id: branch
+      #   run: .github/scripts/check_git_branch_exists.sh crowdin_translations
+
+  # json-fixer:
+  #   needs: [ "synchronize-with-crowdin" ]
+  #   if: needs.synchronize-with-crowdin.outputs.branch_status == 'true'
+  #   runs-on: [ self-hosted, lowend ] 
+
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v3
+  #       with:
+  #         ref: "crowdin_translations"
+
+  #     - name: Init command
+  #       run: .github/scripts/command_init.sh
+
+  #     - name: Run script
+  #       run: .github/scripts/auto_fixer.sh
+
+  #     - name: Add and Commit
+  #       uses: EndBug/add-and-commit@v9
+  #       with:
+  #         author_name: "EfinaBot"
+  #         author_email: 71629264+EfinaBot@users.noreply.github.com
+  #         message: "ci(JsonFixer): 修正翻譯語言檔"
+  #         github_token: ${{ secrets.GH_EFINABOT }}
