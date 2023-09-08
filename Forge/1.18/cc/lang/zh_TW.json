@@ -1,0 +1,17 @@
+{
+    "item.cc.claim_block": "領地方塊",
+    "block.cc.claim_block": "領地方塊",
+    "cc.lore.paper": "領地文件",
+    "cc.message.block.not_owner": "這格方塊不屬於你",
+    "cc.message.block.access": "你沒有權限",
+    "cc.message.spawn": "此區塊離出生點太近",
+    "cc.message.claim_limit": "你已達到領地宣告上限",
+    "cc.message.claim": "你宣告了這個區塊",
+    "cc.message.unclaim": "你解除了對此區塊地宣告",
+    "cc.message.claimed.chunk": "這個區塊已經被宣告佔領了",
+    "cc.message.noclaims.you": "你沒有任何已宣告區域",
+    "cc.message.noclaims": "未宣告所有權",
+    "cc.gui.access": "存取",
+    "cc.gui.modify": "修改",
+    "cc.gui.enable": "啟用"
+}

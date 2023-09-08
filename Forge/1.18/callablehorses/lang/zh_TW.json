@@ -1,0 +1,19 @@
+{
+    "key.callablehorses.category": "可招喚的馬",
+    "key.sethorse.desc": "設定馬",
+    "key.callhorse.desc": "召喚馬",
+    "key.showstats.desc": "顯示馬的資訊",
+    "callablehorses.error.dim": "你不能在這個維度召喚馬！",
+    "callablehorses.error.riding": "你不能在騎乘時召喚馬！",
+    "callablehorses.error.nohorse": "你還沒有自己的馬！",
+    "callablehorses.error.notriding": "你需要騎著馬來執行這項操作！",
+    "callablehorses.error.alreadyowned": "這匹馬已經有主人了!",
+    "callablehorses.error.alreadypersonal": "牠已經是你的馬了！",
+    "callablehorses.error.area": "你不能在這裡召喚你的馬!",
+    "callablehorses.error.range": "你的馬離你太遠了，聽不到你的呼喊！",
+    "callablehorses.error.setarea": "你不能在這個區域內設定你的馬!",
+    "callablehorses.error.nospace": "這裡沒有足夠的空間來召喚你的馬！",
+    "callablehorses.success": "這匹馬現在是你的了！",
+    "callablehorses.alert.death": "你的馬剛剛死了!",
+    "callablehorses.alert.offlinedeath": "你的馬在你離線的時候死了！"
+}

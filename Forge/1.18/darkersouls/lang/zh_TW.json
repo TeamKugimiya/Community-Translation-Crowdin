@@ -1,0 +1,19 @@
+{
+    "item.darkersouls.dragonslayer_swordspear": "屠龍者之劍矛",
+    "item.darkersouls.dragonslayer_spear": "屠龍者之矛",
+    "item.darkersouls.storm_curved_sword": "風暴彎劍",
+    "item.darkersouls.lightning": "閃電矛",
+    "item.darkersouls.crown_of_tempest": "風暴之冠",
+    "item.darkersouls.nameless_king_chestplate": "黃金胸甲",
+    "item.darkersouls.nameless_king_leggings": "風暴長袍",
+    "item.darkersouls.golden_greaves": "黃金護腿",
+    "item.darkersouls.great_belfry": "巨響之鐘",
+    "item.darkersouls.nameless_king_spawn_egg": "無名王 生怪蛋",
+    "entity.darkersouls.nameless_king": "無名王",
+    "entity.darkersouls.lightning_projectile": "閃電",
+    "entity.darkersouls.wind_no_collision": "風",
+    "itemGroup.darksoulsentities": "黑暗靈魂 - 生物",
+    "itemGroup.darksoulsweapons": "黑暗靈魂 - 武器",
+    "itemGroup.darksoulsarmour": "黑暗靈魂 - 裝甲",
+    "itemGroup.darksoulsmagic": "黑暗靈魂 - 法術"
+}
