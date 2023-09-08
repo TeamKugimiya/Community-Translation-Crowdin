@@ -32,7 +32,6 @@ jobs:
           upload_translations: true
           download_translations: true
           skip_untranslated_strings: true
-          skip_untranslated_files: true
           localization_branch_name: crowdin_translations
           create_pull_request: true
           pull_request_title: "新的 Crowdin 翻譯"
